@@ -73,7 +73,7 @@ def solve_sudoku(grid, visualize = False, original_clues = None):
             grid[row][col] = num
             if visualize:
                 draw_grid(grid, original_clues)
-                time.sleep(0.01)
+                time.sleep(0.005)
             
             if solve_sudoku(grid, visualize, original_clues):
                 return True
@@ -81,7 +81,7 @@ def solve_sudoku(grid, visualize = False, original_clues = None):
             grid[row][col] = 0
             if visualize:
                 draw_grid(grid, original_clues)
-                time.sleep(0.01)
+                time.sleep(0.005)
     
     return False
 
