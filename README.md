@@ -77,10 +77,8 @@ When the script runs, you will see:
 3. The final solved grid highlighted in green.
 
 ## License
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
+Feel free to use and modify it as needed.
 
 ## Acknowledgments
 - Thanks to the developers of `pygame` for providing a great library for creating visualizations.
-
-Enjoy solving and visualizing Sudoku puzzles!
 
