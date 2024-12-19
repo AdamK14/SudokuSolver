@@ -128,9 +128,14 @@ def remove_numbers(grid):
 
 def main():
     running = True
+    clock = pygame.time.Clock()  # To control the frame rate
+
     while running:
-        solved_grid = create_fully_solved_grid()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False  # Close the program when the user quits
         
+        solved_grid = create_fully_solved_grid()
         unsolved_grid = remove_numbers(solved_grid)
         original_clues = {(row, col) for row in range(9) for col in range(9) if unsolved_grid[row][col] != 0}
         
@@ -138,8 +143,11 @@ def main():
         time.sleep(3)
         
         solve_sudoku(unsolved_grid, visualize=True, original_clues=original_clues)
-        
         draw_grid(unsolved_grid, original_clues, final=True)
         time.sleep(3)
+
+        clock.tick(FPS)  # Limit the frame rate to the desired FPS
+
+    pygame.quit()  # Ensure pygame exits properly
 
 main()
